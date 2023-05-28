@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let vegetable of productService.productsList()">
+      <div class="card mb-4">
+        <img id="vegetable-img" class="card-img-top" [src]="vegetable.imageUrl" alt="{{ vegetable.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ vegetable.name }}</h5>
+          <p class="card-text">{{ vegetable.description }}</p>
+          <p class="card-text">{{ vegetable.price | currency:'USD'}}</p>
+          <button class="btn btn-primary" (click)="addToCart(vegetable)">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
